@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="InnovationLabInventory.Views.LoginPage" xmlns:el="clr-namespace:InnovationLabInventory.Renderers;assembly=InnovationLabInventory" BackgroundImage="LoginBg.png">
+    <Grid HorizontalOptions="FillAndExpand" RowSpacing="0" VerticalOptions="FillAndExpand" BackgroundColor="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.9*" />
+            <RowDefinition Height="0.18*" />
+            <RowDefinition Height="0.18*" />
+            <RowDefinition Height="0.17*" />
+            <RowDefinition Height="0.5*" />
+        </Grid.RowDefinitions>
+        <BoxView Grid.Row="0" BackgroundColor="Transparent" />
+        <StackLayout Grid.Row="1" Padding="35,5,35,5">
+            <el:MyFrame Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0" CornerRadius="0" OutlineColor="#9c1f4d" HasShadow="false" BackgroundColor="Transparent">
+                <!--                <StackLayout BackgroundColor="Transparent" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal">-->
+                <!--                    <Image Margin="10,5,10,5" Source="EmailIcon.png" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" />-->
+                <el:LoginEntry x:Name="emailTextField" BackgroundColor="White" Keyboard="Email" TextColor="#570e28" Placeholder="Email" FontSize="15" PlaceholderColor="#570e28" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <!--                </StackLayout>-->
+            </el:MyFrame>
+        </StackLayout>
+        <StackLayout Grid.Row="2" Padding="35,5,35,5">
+            <el:MyFrame Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0" CornerRadius="0" OutlineColor="#9c1f4d" HasShadow="false" BackgroundColor="Transparent">
+                <!--                <StackLayout BackgroundColor="Transparent" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal">-->
+                <!--                    <Image Margin="10,5,10,5" Source="Password.png" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" />-->
+                <el:LoginEntry x:Name="passwordTextField" BackgroundColor="White" IsPassword="true" TextColor="#570e28" Placeholder="Password" FontSize="15" PlaceholderColor="#570e28" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <!--                </StackLayout>-->
+            </el:MyFrame>
+        </StackLayout>
+        <el:MyFrame Grid.Row="3" Padding="0" Margin="35,5,35,0" BackgroundColor="#9c1f4d" CornerRadius="0" OutlineColor="#9c1f4d" HasShadow="false">
+            <el:LoginButton Text="Login" FontSize="16" FontAttributes="Bold" TextColor="#ffffff" BackgroundColor="#9c1f4d" Clicked="Login_Clicked" />
+        </el:MyFrame>
+        <Label Grid.Row="4" Margin="0,10,0,0" HorizontalOptions="CenterAndExpand" Text="Or create an account" FontSize="16" FontAttributes="Bold" TextColor="#ffffff">
+            <Label.GestureRecognizers>
+                <!--                <TapGestureRecognizer Tapped="Signup_Tapped" />-->
+            </Label.GestureRecognizers>
+        </Label>
+    </Grid>
+</ContentPage>

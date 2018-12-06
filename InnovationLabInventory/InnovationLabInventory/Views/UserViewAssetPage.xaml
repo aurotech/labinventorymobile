@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="InnovationLabInventory.Views.UserViewAssetPage" xmlns:el="clr-namespace:InnovationLabInventory.Renderers;assembly=InnovationLabInventory" BackgroundImage="HomeBg.png">
+    <Grid HorizontalOptions="FillAndExpand" RowSpacing="0" VerticalOptions="FillAndExpand" BackgroundColor="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="0.8*" />
+            <RowDefinition Height="0.3*" />
+            <RowDefinition Height="0.2*" />
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="0" Spacing="0" Orientation="Horizontal" BackgroundColor="#301631">
+           <!-- <Image x:Name="img" Margin="15,10,10,0" Source="Menubar.png" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" />-->
+            <!--            <Image x:Name="img" Margin="15,10,10,0" Source="Menubar.png" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" />
+            <Label Margin="0,10,0,0" Text="Take Our Visitor Survey" TextColor="White" FontSize="16" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />-->
+        </StackLayout>
+        <BoxView Grid.Row="1" BackgroundColor="Transparent" />
+        <Label Grid.Row="2" Margin="20,5,10,0" x:Name="labelinfo" Text="Greetings, Inventory Lab User. Here are your assigned assets." TextColor="#570e28" FontSize="16" />
+        <StackLayout Grid.Row="3" Padding="35,5,35,5">
+            <el:MyFrame Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0" CornerRadius="0" OutlineColor="#9c1f4d" HasShadow="false" BackgroundColor="Transparent">
+                <StackLayout BackgroundColor="Transparent" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                    <el:LoginEntry x:Name="AssetIDEntry" BackgroundColor="Transparent" TextColor="#570e28" Placeholder="AssetID/Barcode" FontSize="15" PlaceholderColor="#570e28" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                </StackLayout>
+            </el:MyFrame>
+        </StackLayout>
+        <Grid Grid.Row="4" ColumnSpacing="0" Margin="10,0,10,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*" />
+                <RowDefinition Height="0.8*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" RowSpacing="0" BackgroundColor="#7a163c" ColumnSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3.5*">
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="0.02*">
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="3*">
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="0.02*">
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="2.5*">
+                    </ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Frame Grid.Column="0" Margin="0" Padding="5,0,3,0" CornerRadius="0" HasShadow="false" BackgroundColor="#7a163c">
+                    <!--                <Label Text="Name" TextColor="Red" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" />-->
+                    <Label Text="Asset ID" FontSize="16" TextColor="#ffffff" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" />
+                </Frame>
+                <BoxView Grid.Column="1" BackgroundColor="#ffffff" />
+                <Frame Grid.Column="2" Margin="0" Padding="5,0,3,0" CornerRadius="0" HasShadow="false" BackgroundColor="#7a163c">
+                    <Label Text="Description" FontSize="16" TextColor="#ffffff" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" />
+                    <!--                <Label Text="Name" TextColor="Red" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" />-->
+                </Frame>
+                <BoxView Grid.Column="3" BackgroundColor="#ffffff" />
+                <Frame Grid.Column="4" Margin="0" Padding="5,0,3,0" CornerRadius="0" HasShadow="false" BackgroundColor="#7a163c">
+                    <Label Text="Location" FontSize="16" TextColor="#ffffff" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" />
+                    <!--                <Label Text="Name" TextColor="Red" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" />-->
+                </Frame>
+            </Grid>
+            <Grid Grid.Row="1" RowSpacing="0" ColumnSpacing="0">
+                <ListView x:Name="listview" SeparatorVisibility="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid ColumnSpacing="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="3.5*">
+                                        </ColumnDefinition>
+                                        <ColumnDefinition Width="3*">
+                                        </ColumnDefinition>
+                                        <ColumnDefinition Width="2.5*">
+                                        </ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Frame Grid.Column="0" Margin="0" Padding="5,0,3,0" CornerRadius="0" OutlineColor="White" HasShadow="false" BackgroundColor="#ce958e">
+                                        <Label Text="{Binding assetId}" TextColor="#570e28" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" />
+                                    </Frame>
+                                    <Frame Grid.Column="1" Margin="0" Padding="5,0,3,0" CornerRadius="0" OutlineColor="White" HasShadow="false" BackgroundColor="#ce958e">
+                                        <Label Text="{Binding description}" TextColor="#570e28" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" />
+                                    </Frame>
+                                    <Frame Grid.Column="2" Margin="0" Padding="5,0,3,0" CornerRadius="0" OutlineColor="White" HasShadow="false" BackgroundColor="#ce958e">
+                                        <Label Text="{Binding status}" TextColor="#570e28" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" />
+                                    </Frame>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </Grid>
+        <!-- <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30*" />
+                        <ColumnDefinition Width="30*" />
+                        <ColumnDefinition Width="30*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" BackgroundColor="Transparent" Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="Asset ID" TextColor="#ffffff" FontSize="16" FontAttributes="Bold" />
+                    <Label Grid.Column="1" BackgroundColor="Transparent" Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="Description" TextColor="#ffffff" FontSize="16" FontAttributes="Bold" />
+                    <Label Grid.Column="2" BackgroundColor="Transparent" Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="Location" TextColor="#ffffff" FontSize="16" FontAttributes="Bold" />
+                </Grid>
+                <ListView x:Name="listx">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30*" />
+                                        <ColumnDefinition Width="30*" />
+                                        <ColumnDefinition Width="30*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="{Binding assetID}" TextColor="#ffffff" FontSize="15" />
+                                    <Label Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="{Binding description}" TextColor="#ffffff" FontSize="15" />
+                                    <Label Grid.Column="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="{Binding location}" TextColor="#ffffff" FontSize="15" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>-->
+        <BoxView Grid.Row="5" BackgroundColor="Transparent" />
+        <Grid Grid.Row="6" BackgroundColor="#301631">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Source="Back.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Back_Tapped" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Column="1" Source="Home.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Home_Tapped" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Column="2" Source="" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <!-- <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Scan_Tapped" />
+                </Image.GestureRecognizers>-->
+            </Image>
+        </Grid>
+    </Grid>
+</ContentPage>

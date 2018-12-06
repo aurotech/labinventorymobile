@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="InnovationLabInventory.Views.HomePage" xmlns:el="clr-namespace:InnovationLabInventory.Renderers;assembly=InnovationLabInventory" BackgroundImage="HomeBg.png">
+    <Grid HorizontalOptions="FillAndExpand" RowSpacing="0" VerticalOptions="FillAndExpand" BackgroundColor="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="0.3*" />
+            <RowDefinition Height="0.3*" />
+            <RowDefinition Height="0.15*" />
+            <RowDefinition Height="0.15*" />
+            <RowDefinition Height="0.15*" />
+            <RowDefinition Height="0.6*" />
+            <RowDefinition Height="0.2*" />
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="0" Spacing="0" Orientation="Horizontal" BackgroundColor="#2f073b">
+            <Image x:Name="img" Margin="15,10,10,0" Source="Menubar.png" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+        <BoxView Grid.Row="1" BackgroundColor="Transparent" />
+        <Label Grid.Row="2" Margin="20,10,10,0" x:Name="label" Text="Welcome to the Innovation Lab Inventory App." TextColor="#570e28" FontSize="15" />
+        <!--<el:MyFrame Grid.Row="3" Padding="0" Margin="40,5,40,0" BackgroundColor="#9c1f4d" CornerRadius="0" OutlineColor="#9c1f4d" HasShadow="false">
+            <el:LoginButton Text="User Assets" FontSize="16" FontAttributes="Bold" TextColor="#ffffff" BackgroundColor="#9c1f4d" Clicked="UserAsset_Clicked" />
+        </el:MyFrame>-->
+        <el:MyFrame Grid.Row="3" Padding="0" Margin="40,5,40,0" BackgroundColor="#9c1f4d" CornerRadius="0" OutlineColor="#9c1f4d" HasShadow="false">
+            <el:LoginButton Text="View Assets" FontSize="16" FontAttributes="Bold" TextColor="#ffffff" BackgroundColor="#9c1f4d" Clicked="ViewAsset_Clicked" />
+        </el:MyFrame>
+        <el:MyFrame Grid.Row="4" Padding="0" Margin="40,5,40,0" BackgroundColor="#9c1f4d" CornerRadius="0" OutlineColor="#9c1f4d" HasShadow="false">
+            <el:LoginButton Text="Scan Asset" FontSize="16" FontAttributes="Bold" TextColor="#ffffff" BackgroundColor="#9c1f4d" Clicked="ScanAsset_Clicked" />
+        </el:MyFrame>
+        <el:MyFrame Grid.Row="5" Padding="0" Margin="40,5,40,0" BackgroundColor="#9c1f4d" CornerRadius="0" OutlineColor="#9c1f4d" HasShadow="false">
+            <el:LoginButton Text="Create Asset" FontSize="16" FontAttributes="Bold" TextColor="#ffffff" BackgroundColor="#9c1f4d" Clicked="CreateAsset_Clicked" />
+        </el:MyFrame>
+        <BoxView Grid.Row="6" BackgroundColor="Transparent" />
+        <Grid Grid.Row="7" BackgroundColor="#2f073b">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Source="Back.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Back_Tapped" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Column="1" Source="Home.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Home_Tapped" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Column="2" Source="" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <!--<Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Scan_Tapped" />
+                </Image.GestureRecognizers>-->
+            </Image>
+        </Grid>
+    </Grid>
+</ContentPage>
